@@ -2644,6 +2644,10 @@ class Alex {
       return tmp;
     }
 
+    ConstReverseIterator reverse() {
+      return ConstReverseIterator { cur_leaf_, cur_idx_ };
+    }
+
 #if ALEX_DATA_NODE_SEP_ARRAYS
     // Does not return a reference because keys and payloads are stored
     // separately.
@@ -2879,6 +2883,10 @@ class Alex {
       ConstReverseIterator tmp = *this;
       advance();
       return tmp;
+    }
+
+    ConstIterator reverse() {
+      return ConstIterator { cur_leaf_, cur_idx_ };
     }
 
 #if ALEX_DATA_NODE_SEP_ARRAYS
